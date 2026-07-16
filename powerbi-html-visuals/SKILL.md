@@ -39,29 +39,30 @@ this column", "compare two groups side by side").
 | User intent (examples) | Visual | Key inputs needed | notes.md | Status |
 |---|---|---|---|---|
 | "KPI card with a target and hover detail", "progress to revenue target" | `kpi-card-target-slide` | current value, target value, attainment %, gap | [visuals/kpi-card-target-slide/notes.md](visuals/kpi-card-target-slide/notes.md) | ✅ Ready |
-| Same as above but wants a 3D flip instead of a slide | `kpi-card-target-flip` | same as slide variant | `visuals/kpi-card-target-flip/notes.md` | 🚧 Planned |
-| Single KPI, no target — just value + change vs. prior period | `kpi-card-simple-blink` | current value, prior-period value/variance | `visuals/kpi-card-simple-blink/notes.md` | 🚧 Planned |
+| Same as above but wants a 3D flip instead of a slide | `kpi-card-target-flip` | current value, target value, attainment %, gap | [visuals/kpi-card-target-flip/notes.md](visuals/kpi-card-target-flip/notes.md) | ✅ Ready |
+| Single KPI, no target — just value + change vs. prior period | `kpi-card-simple-blink` | current value, prior-period value/variance | [visuals/kpi-card-simple-blink/notes.md](visuals/kpi-card-simple-blink/notes.md) | ✅ Ready |
 | "Status badge for this column", "color-code days on market / rating / category" | `cf-status-badge` | column/measure to classify, tier thresholds or category list, colors | [visuals/cf-status-badge/notes.md](visuals/cf-status-badge/notes.md) | ✅ Ready |
-| "Row of yes/no amenity icons" | `cf-icon-status-row` | list of boolean columns to show as icons | `visuals/cf-icon-status-row/notes.md` | 🚧 Planned |
+| "Row of yes/no amenity icons" | `cf-icon-status-row` | list of boolean columns to show as icons | [visuals/cf-icon-status-row/notes.md](visuals/cf-icon-status-row/notes.md) | ✅ Ready |
 | "Pill-style category label in a table" (Customer/Investor/Partner style) | `cf-status-badge` (fixed-width categorical variant) | category list + one color per category | [visuals/cf-status-badge/notes.md](visuals/cf-status-badge/notes.md) | ✅ Ready (see "worked examples") |
-| "Card grid, one per country/category, with a split metric" | `category-card-grid` | grouping dimension, total measure, 2+ way split measure | `visuals/category-card-grid/notes.md` | 🚧 Planned |
-| "100% stacked horizontal bar by category" | `stacked-bar-100` | category list (fixed), sub-category breakdown measure | `visuals/stacked-bar-100/notes.md` | 🚧 Planned |
-| "Horizontal bar list with a track, ranked/sorted" | `horizontal-bar-list` | category list, single measure, optional total for %s | `visuals/horizontal-bar-list/notes.md` | 🚧 Planned |
-| "Grouped/clustered bars, 2 series side by side" | `clustered-bar` | 2 series measures, category list | `visuals/clustered-bar/notes.md` | 🚧 Planned |
-| "Grouped/clustered vertical columns" | `clustered-column` | 2 series measures, category list | `visuals/clustered-column/notes.md` | 🚧 Planned |
-| "Stacked vertical columns" | `stacked-column` | 2+ series measures, category list | `visuals/stacked-column/notes.md` | 🚧 Planned |
-| "Donut chart, single, multi-segment" | `donut-single` | 2+ segment measures + total | `visuals/donut-single/notes.md` | 🚧 Planned |
-| "Grid of small donuts, one per category" | `donut-grid` | category list, per-category measure + total | `visuals/donut-grid/notes.md` | 🚧 Planned |
-| "Line/area trend, switchable metric" | `trend-line-field-param` | Field Parameter, one measure per switchable option | `visuals/trend-line-field-param/notes.md` | 🚧 Planned |
-| "Dynamic narrative sentence describing a trend" | `narrative-summary` | comparison measure, base period, comparison period | `visuals/narrative-summary/notes.md` | 🚧 Planned |
-| "Stat comparison card (e.g. average vs median, skew)" | `stat-comparison-card` | 2 related measures (avg/median or similar pair) per metric | `visuals/stat-comparison-card/notes.md` | 🚧 Planned |
+| "Card grid, one per country/category, with a split metric" | `category-card-grid` | grouping dimension, total measure, 2-way split measure | [visuals/category-card-grid/notes.md](visuals/category-card-grid/notes.md) | ✅ Ready |
+| "100% stacked horizontal bar by category" | `stacked-bar-100` | category list (fixed), sub-category breakdown measure | [visuals/stacked-bar-100/notes.md](visuals/stacked-bar-100/notes.md) | ✅ Ready |
+| "Horizontal bar list with a track, ranked/sorted" | `horizontal-bar-list` | category list, single measure, optional total for %s | [visuals/horizontal-bar-list/notes.md](visuals/horizontal-bar-list/notes.md) | ✅ Ready |
+| "Grouped/clustered bars, 2 series side by side" | `clustered-bar` | 2 series measures, category list | [visuals/clustered-bar/notes.md](visuals/clustered-bar/notes.md) | ✅ Ready |
+| "Grouped/clustered vertical columns" | `clustered-column` | 2 series measures, category list | [visuals/clustered-column/notes.md](visuals/clustered-column/notes.md) | ✅ Ready |
+| "Stacked vertical columns" | `stacked-column` | 2 series measures, category list | [visuals/stacked-column/notes.md](visuals/stacked-column/notes.md) | ✅ Ready |
+| "Donut chart, single, multi-segment" | `donut-single` | 3+ mutually-exclusive segment measures + total | [visuals/donut-single/notes.md](visuals/donut-single/notes.md) | ✅ Ready |
+| "Grid of small donuts, one per category" | `donut-grid` | category list, per-category measure + shared total | [visuals/donut-grid/notes.md](visuals/donut-grid/notes.md) | ✅ Ready |
+| "Line/area trend, switchable metric" | `trend-line-field-param` | Field Parameter (pre-built in model), one measure per switchable option, period count/grain | [visuals/trend-line-field-param/notes.md](visuals/trend-line-field-param/notes.md) | ✅ Ready |
+| "Dynamic narrative sentence describing a trend" | `narrative-summary` | comparison measure, base period, comparison period — plain text, no HTML | [visuals/narrative-summary/notes.md](visuals/narrative-summary/notes.md) | ✅ Ready |
+| "Stat comparison card (e.g. average vs median, skew)" | `stat-comparison-card` | 1-2 related measures (avg/median or similar pair) per metric | [visuals/stat-comparison-card/notes.md](visuals/stat-comparison-card/notes.md) | ✅ Ready — ⚠️ has a flagged possible encoding bug carried over from the source, see notes.md before reuse |
 
 ## Status legend
 
-- ✅ **Ready** — template + notes.md complete, safe to use directly.
-- 🚧 **Planned** — identified from the source repo audit but not yet built into
-  this skill's structure. If asked for one of these, tell the user it's not
-  migrated yet rather than improvising from memory of the old repo file.
+- ✅ **Ready** — template + notes.md complete, safe to use directly (check for
+  any ⚠️ caveat noted in the table above first).
+- 🚧 **Planned** — identified but not yet built. None currently outstanding —
+  this legend stays in place in case new visual requests get triaged in
+  before being built out.
 
 ## Shared references
 
