@@ -1,3 +1,8 @@
+---
+name: powerbi-html-visuals
+description: Generate custom Power BI visuals built from HTML/CSS/DAX measures — KPI cards, gauges, donuts, bar/column charts, conditional-format status badges, category card grids, trend lines, and narrative summary text. Use when the person asks for a Power BI visual by type ("KPI card", "gauge", "donut chart", "status badge") or by intent ("progress to target", "color-code this column", "compare two groups"), or mentions binding a measure to the HTML Content custom visual or conditional formatting via data URI/Image URL.
+---
+
 # Power BI HTML Visuals
 
 Use this skill whenever someone asks for a Power BI visual built from HTML/CSS/DAX
