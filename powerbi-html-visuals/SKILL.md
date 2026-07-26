@@ -1,6 +1,6 @@
 ---
 name: powerbi-html-visuals
-description: Generate custom Power BI visuals built from HTML/CSS/DAX measures — KPI cards, gauges, donuts, bar/column charts, conditional-format status badges, category card grids, trend lines, and narrative summary text. Use when the person asks for a Power BI visual by type ("KPI card", "gauge", "donut chart", "status badge") or by intent ("progress to target", "color-code this column", "compare two groups"), or mentions binding a measure to the HTML Content custom visual or conditional formatting via data URI/Image URL.
+description: Write the HTML/CSS/DAX code for custom Power BI visuals — KPI cards, gauges, donuts, bar/column charts, conditional-format status badges, category card grids, trend lines, and narrative summary text. Produces a ready-to-use DAX measure (and binding instructions) that the user then places into a visual themselves; it does not build or configure the visual in their report. Use when the person asks for a Power BI visual by type ("KPI card", "gauge", "donut chart", "status badge") or by intent ("progress to target", "color-code this column", "compare two groups"), or mentions binding a measure to the HTML Content custom visual or conditional formatting via data URI/Image URL. The user must state the kind of visual they want so the right code can be written.
 ---
 
 # Power BI HTML Visuals
@@ -10,6 +10,27 @@ Use this skill whenever someone asks for a Power BI visual built from HTML/CSS/D
 country/category card grids, etc.) — whether they name a specific visual style or
 just describe what they want to show ("progress to target", "a status badge for
 this column", "compare two groups side by side").
+
+## What this skill does (and doesn't) do
+
+**This skill only writes code — it does not build the visual in Power BI.** The
+deliverable is a DAX measure (returning an HTML/CSS or SVG string) that the user
+then places into a visual **themselves**, inside their own report. Claude does not
+have access to their Power BI file and cannot create, place, size, or configure any
+visual for them.
+
+So the output of this skill is always:
+1. The finished DAX measure text (built from the matching `template.html`), and
+2. Short setup notes telling the user which visual to drop it into and how to bind
+   it (from the relevant `shared/*-binding.md` doc) — so they can wire it up on
+   their side.
+
+Because Claude is writing code blind to the actual report, **the user must state
+the kind of visual they want** — either by name ("KPI card with a target", "100%
+stacked bar", "status badge") or by intent ("progress to target", "compare two
+groups"). Without that, there's no way to know which template/DAX shape to produce.
+If the request doesn't map cleanly to a row in the decision table below, ask the
+user to pick one rather than guessing.
 
 ## How to use this skill
 
@@ -30,8 +51,18 @@ this column", "compare two groups side by side").
    real binding is needed.
 6. If a visual's notes.md flags an ambiguous edge case (e.g. which of two similar
    sub-patterns applies), ask the user before picking one.
+7. **Deliver the finished DAX measure plus binding instructions.** Replace every
+   `«MEASURE: ...»` / `«DIMENSION: ...»` / `«LABEL: ...»` token with the user's real
+   references, then hand back the complete measure in a code block, followed by a
+   short "how to bind this in your report" note from the relevant `shared/*-binding.md`
+   doc (which visual to add it to, the data-category/field-well setting, and any
+   sizing to match). The user does the placing in Power BI — Claude only supplies
+   the code and the instructions.
 
 ## Two visual families (different binding mechanism — see relevant shared doc)
+
+The user picks the visual container on their side; these notes tell them which one
+each template needs and how to bind the measure into it.
 
 - **Full-canvas HTML cards** — require the **HTML Content** custom visual (by
   Daniel Marsh-Patrick). One measure returns a complete HTML/CSS string.
