@@ -45,9 +45,14 @@ Code picks it up.
    dimensions, and any thresholds it needs to bind to.
 3. **Get back a ready-to-use DAX measure** plus short instructions on which visual
    to drop it into and how to bind it.
-4. **In Power BI**, create the measure, add the target visual (e.g. the free
-   *HTML Content* visual by Daniel Marsh-Patrick for full-canvas cards, or a
-   table/matrix column set to *Image URL* for conditional-format badges), and
-   assign the measure.
+4. **In Power BI**, create the measure, add the target visual, and assign the
+   measure:
+   - **Full-canvas cards** (KPI cards, donuts, charts, grids) need the free
+     **HTML Content** visual by **Daniel Marsh-Patrick**. Add it from **AppSource**
+     — in Power BI Desktop, go to the **Visualizations** pane → **… (Get more
+     visuals)** → search **"HTML Content"** → **Add**. Then drop the visual on the
+     canvas and put the measure in its field well.
+   - **Conditional-format badges** need no custom visual — add the measure to a
+     **table/matrix** column and set its **Data category** to **Image URL**.
 
 That's it — Claude handles the DAX/HTML; you place it in the report.
